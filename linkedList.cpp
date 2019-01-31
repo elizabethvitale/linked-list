@@ -61,12 +61,36 @@ public:
     }
   }
 
+  void delete_Last_Node(){
+    if(head == NULL){
+      std::cout << "The list is empty already..." <<endl;
+      
+    }
+    if(head->next == NULL){
+      delete head; //clear from heap
+      head = NULL;
+      std::cout << "Your list is now empty" <<endl;
+   
+    }
+    //if the list is bigger than or equal to 2, we must transverse the list
+    else{
+      temp = head;
+      while(temp->next->next != null){
+	temp = temp->next; //while there is another item, this runs
+      }
+      delete temp->next;
+      temp->next = null;
+    }
+    return NULL;
+  }
+  
   int main(){
     linkedList a;
-    a.createNode(1);
+    a.createFirstNode(1);
     a.createNode(2);
     a.createNode(3);
     a.createNode(4);
+    
   }
 
 private:
